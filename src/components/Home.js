@@ -6,14 +6,16 @@ class Home extends React.Component {
 
   state = {
     events: [],
-    locations: [],
+    ev: []
   }
 
-  locationArr(){
-    if(this.state.events.location !== this.locations){
-      this.setState({locations: this.state.events.location + this.locations})
-      }
-    }
+
+// handleClick(evt){
+//goal is to take clicked item and push it into the
+//state array
+//then display
+//   })
+// }
 
 
   componentDidMount() {
@@ -34,15 +36,29 @@ class Home extends React.Component {
             <div>
               <ul>
                 {this.state.events.map(event => (
-                  <li key={event._id}>{event.title}</li>
+                  <li key={event._id} >{event.title}</li>
+                  //need to finsih this.. ask for help i guess
+                  // <a href='#' onClick={this.handleClick.bind(this)}></a>
                 ))}
               </ul>
             </div>
             <div id="container">
-              <ShowHide />
+
+                <ShowHide />
+
+
             </div>
 
+
+        <div>
+          <h1>this.state.ev.title</h1>
+          <p>
+            //where selected event will go
+          </p>
         </div>
+
+        </div>
+
     )
   }
 }
