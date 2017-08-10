@@ -5,19 +5,19 @@ import {Redirect} from 'react-router-dom'
 class SignUp extends React.Component {
   constructor(){
     super()
-  this.state = {
-    shouldRedirect: false,
-    interests: []
-  }
-
+    this.state = {
+      shouldRedirect: false,
+      interests: []
+    }
+}
   onChange(e){
     const interests = this.state.interests
     let index
 
     if(e.target.checked){
-      interests.push(+e.target.value)
+      interests.push(e.target.value)
     } else {
-      index = interests.indexOf(+e.target.value)
+      index = interests.indexOf(e.target.value)
       interests.splice(index, 1)
     }
     this.setState({interests: interests})
@@ -32,10 +32,8 @@ class SignUp extends React.Component {
       email: this.refs.email.value,
       password: this.refs.password.value,
       interests: this.state.interests
-      console.log(interests)
     }
-    console.log("CREATING ACCOUNT...")
-    console.log(formData)
+    
     auth.signUp(formData).then(success => {
       if (success)
         this.setState({shouldRedirect: true})
@@ -160,5 +158,6 @@ class SignUp extends React.Component {
           )
         }
       }
+
 
 export default SignUp

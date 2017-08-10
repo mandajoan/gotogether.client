@@ -18,6 +18,11 @@ class AuthClient {
       .then(response => response.data)
   }
 
+  newEvent(eventInfo){
+    return this.request({method: 'POST', url: '/events', data: eventInfo})
+      .then((response) => response.data)
+  }
+
   signUp(userInfo) {
     return this.request({method: 'POST', url: '/users', data: userInfo})
       .then((response) => response.data.success)
