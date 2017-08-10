@@ -28,9 +28,14 @@ class Home extends React.Component {
 
 
   render() {
+    const currentUser = this.props.currentUser
     return (
 
       <div>
+        {currentUser
+            ? <p>Current User: {currentUser.name}</p>
+            : null
+          }
         <h1>Events</h1>
 
             <div>
@@ -44,7 +49,7 @@ class Home extends React.Component {
             </div>
             <div id="container">
 
-                <ShowHide />
+                <ShowHide currentUser={currentUser} />
 
 
             </div>

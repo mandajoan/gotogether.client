@@ -1,15 +1,17 @@
 import React from 'react'
 import NewEvent from './NewEvent'
-import auth from '../auth'
+
 
 class ShowHide extends React.Component {
   constructor(){
     super()
     this.state = {
-      childVisible: false,
-      currentUser : auth.getCurrentUser()
+      childVisible: false
+
     }
   }
+
+
   onClick(){
       if(this.state.currentUser !== null){
         this.setState({childVisible: !this.state.childVisible})
@@ -25,7 +27,8 @@ class ShowHide extends React.Component {
             <input type='submit' value='New Event' />
           </div>
             {
-              this.state.currentUser && this.state.childVisible ? <NewEvent /> : null
+              this.props.currentUser && this.state.childVisible ?
+              <NewEvent /> : null
             }
 
 

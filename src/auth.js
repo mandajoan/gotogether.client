@@ -30,7 +30,10 @@ class AuthClient {
 
   signUp(userInfo) {
     return this.request({method: 'POST', url: '/users', data: userInfo})
-      .then((response) => response.data.success)
+      .then((response) => {
+        console.log(response)
+        return response.data.success
+      })
   }
 
   logIn(credentials) {

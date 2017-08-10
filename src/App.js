@@ -36,9 +36,9 @@ render() {
           ? <p>Current User: {currentUser.name}</p>
           : null
         }
-        <NavBar currentUser={this.state.currentUser} />
+        <NavBar currentUser={currentUser} />
         <Route exact path='/' render={() => (
-            <Home currentUser={this.state.currentUser} />
+            <Home currentUser={currentUser} />
           )} />
         <Route path='/signup' component={SignUp} />
         <Route path='/login' render={() => (
