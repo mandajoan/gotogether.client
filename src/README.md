@@ -5,7 +5,9 @@
 #### You can access *Go Together* client side [here](https://gotogether-client.herokuapp.com/) and the server side [here](https://gotogether-server.herokuapp.com/).
 
 <hr>
+
 ## Technologies
+
 ### Go Together is a full-stack application built using the React Famework with a Mongo Database.
 
 #### NPM Packages:
