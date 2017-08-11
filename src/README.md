@@ -1,6 +1,6 @@
 ![Logo](/Users/dearman/Desktop/project_4/go-together/public/logo.png)
 
-###*Go Together* is a web application developed with the intent to help break the ice for tech industry individuals attending events.
+###*Go Together* is a web application developed with the intent to help break the ice for tech professionals attending industry events.
 
 ####You can access *Go Together* client side [here](https://gotogether-client.herokuapp.com/) and the server side [here](https://gotogether-server.herokuapp.com/).
 
@@ -65,7 +65,8 @@
 
 ####Future Additions
 * Integrating Eventbrite API to access integrate events
-*
+* Search through Event List
+* Order by Date Added
 
 
 ####Unsolved Problems
