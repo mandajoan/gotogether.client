@@ -1,4 +1,4 @@
-![Logo](/Users/dearman/Desktop/project_4/go-together/public/logo.png)
+![Logo](project_4/go-together/public/logo.png)
 
  ### *Go Together* is a web application developed with the intent to help break the ice for tech professionals attending industry events.
 
@@ -31,6 +31,7 @@
 
 
 <hr>
+
 ## Models
 
 ### There are 2 Models within the database with an internal API:
