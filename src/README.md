@@ -1,22 +1,22 @@
 ![Logo](/Users/dearman/Desktop/project_4/go-together/public/logo.png)
 
-###*Go Together* is a web application developed with the intent to help break the ice for tech professionals attending industry events.
+ ### *Go Together* is a web application developed with the intent to help break the ice for tech professionals attending industry events.
 
-####You can access *Go Together* client side [here](https://gotogether-client.herokuapp.com/) and the server side [here](https://gotogether-server.herokuapp.com/).
+#### You can access *Go Together* client side [here](https://gotogether-client.herokuapp.com/) and the server side [here](https://gotogether-server.herokuapp.com/).
 
 <hr>
-##Technologies
-###Go Together is a full-stack application built using the React Famework with a Mongo Database.
+## Technologies
+### Go Together is a full-stack application built using the React Famework with a Mongo Database.
 
-####NPM Packages:
+#### NPM Packages:
 
-#####Client:  
+##### Client:  
 *  Axios  
 *  Jwt-Decode  
 *  Milligram
 *  React (Dom & Router-Dom)
 
-#####Server:  
+##### Server:  
 
 *  Bcrypt
 *  Body-Parser
@@ -29,47 +29,47 @@
 
 
 <hr>
-##Models
+## Models
 
-###There are 2 Models within the database with an internal API:
+### There are 2 Models within the database with an internal API:
 
-#####User Model (Full CRUD)
-#####Event Model  
+##### User Model (Full CRUD)
+##### Event Model  
 
 ![ERD Diagram](/Users/dearman/Desktop/project_4/go-together/public/erd.png)
 
 <hr>
-##UX Design
-###Go Together was designed to embrace the React Single Page App(SPA) features.
+## UX Design
+### Go Together was designed to embrace the React Single Page App(SPA) features.
 
-####The goal was to keep as much on one page as possible.
+#### The goal was to keep as much on one page as possible.
 
-#####Wireframe Design:
+##### Wireframe Design:
 
 ![Wireframe](/Users/dearman/Desktop/project_4/go-together/public/wireframe.png)
 
 <hr>
 
-##User Stories
+## User Stories
 
-####I want an app that allows me to connect with others who are going to the same event as me.
+#### I want an app that allows me to connect with others who are going to the same event as me.
 
-####I want to be able to break the ice before networking/meeting in person.
+#### I want to be able to break the ice before networking/meeting in person.
 
-####I want to find people to connect with with similar goals/interests with me at events.
+#### I want to find people to connect with with similar goals/interests with me at events.
 
 
 <hr>
 
 ## Future Additions & Unsolved Problems
 
-####Future Additions
+#### Future Additions
 * Integrating Eventbrite API to access integrate events
 * Search through Event List
 * Order by Date Added
 
 
-####Unsolved Problems
+#### Unsolved Problems
 >"I got 99 problems..."
 
 * Pushing the Current-User into the user array within the selected Event via the 'Going' button
@@ -77,7 +77,7 @@
 * Add 'Contact User' function where on click an email window pops (with protected contact info)
 * Comparing the 'Interests' of the Current-User with the other 'Going' Users and then displaying the compatibility in form of a Star Rating.
 
-#####Algorithm Concept for Star Rating:
+##### Algorithm Concept for Star Rating:
  ```javascript
 function avg(f, s){
 var arr1 = [1, 0, 0, 1, 0, 1, 0, 0, 1, 0]
