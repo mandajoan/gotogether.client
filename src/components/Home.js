@@ -1,34 +1,37 @@
 import React from 'react'
 import auth from '../auth'
 import ShowHide from './ShowHide'
+import Event from './Event'
+import {NavLink} from 'react-router-dom'
 
 class Home extends React.Component {
 
   state = {
     events: [],
-    ev: []
+    currentEvent: null
   }
-
-
-// handleClick(evt){
-//goal is to take clicked item and push it into the
-//state array
-//then display
-//   })
-// }
 
 
   componentDidMount() {
     auth.getEvents().then(events => {
-      this.setState({events})
+      this.setState({events:events})
+      console.log(events)
     })
   }
 
-
-
+  clickHandle(id){
+    this.setState({currentEvent: null})
+    auth.getEvent(id).then(event => {
+      this.setState({currentEvent: event})
+      console.log(this.state.currentEvent);
+      })
+  }
 
   render() {
-    const currentUser = this.props.currentUser
+    const
+      currentUser = this.props.currentUser
+      var eId =''
+
     return (
 
       <div>
@@ -39,14 +42,15 @@ class Home extends React.Component {
         <h1>Events</h1>
 
             <div>
-              <ul>
-                {this.state.events.map(event => (
-                  <li key={event._id} >{event.title}</li>
-                  //need to finsih this.. ask for help i guess
-                  // <a href='#' onClick={this.handleClick.bind(this)}></a>
-                ))}
+              <ul id="eventsList">
+
+                {this.state.events.map(event => {
+                eId = event._id
+                return <li key={event._id} onClick={this.clickHandle.bind(this, event._id)}>{event.title}</li>
+                })}
               </ul>
             </div>
+
             <div id="container">
 
                 <ShowHide currentUser={currentUser} />
@@ -56,10 +60,12 @@ class Home extends React.Component {
 
 
         <div>
-          <h1>this.state.ev.title</h1>
-          <p>
-            //where selected event will go
-          </p>
+          {this.state.currentEvent ?
+            <Event event={this.state.currentEvent}/>
+            :
+            null
+          }
+
         </div>
 
         </div>

@@ -21,7 +21,7 @@ class AuthClient {
   }
   //route to show specific event in div
   getEvent(ev){
-    return this.request({method: 'GET', url:'/events/:id', data: ev})
+    return this.request({method: 'GET', url:`/events/${ev}`, data: ev})
     .then(response => response.data)
   }
 

@@ -8,6 +8,7 @@ import Home from './components/Home'
 import SignUp from './components/SignUp'
 import LogIn from './components/LogIn'
 import LogOut from './components/LogOut'
+import Event from './components/Event'
 import AccountSettings from './components/AccountSettings'
 
 
@@ -49,12 +50,14 @@ render() {
         <Route path='/logout' render={() => (
           <LogOut onLogOut={this.logOut.bind(this)} />
             )} />
-  
+
           <Route path='/users/:id' render={() => (
             currentUser
             ? <AccountSettings onDeleteUser={this.logOut.bind(this)} onUpdateUser={this.setCurrentUser.bind(this)} currentUser={currentUser} />
             : <Redirect to='/login' />
           )} />
+      
+
 
       </div>
     </Router>
