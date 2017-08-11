@@ -1,4 +1,4 @@
-![Logo](/go-together/public/logo.png)
+![Logo](./go-together/public/logo.png)
 
  ### *Go Together* is a web application developed with the intent to help break the ice for tech professionals attending industry events.
 
