@@ -32,7 +32,6 @@ class AccountSettings extends React.Component {
       name: this.refs.name.value,
       title: this.refs.title.value,
       email: this.refs.email.value,
-      password: this.refs.password.value,
       interests: this.state.interests
     }
     console.log(formData)
@@ -57,13 +56,13 @@ class AccountSettings extends React.Component {
         <div className="accountSettings">
           <h1>Update Account Info</h1>
           <form onSubmit={this.handleFormSubmit.bind(this)}>
-            <input ref="name" type="text" placeholder={currentUser.name}/>
+            <input ref="name" type="text" defaultValue={currentUser.name}/>
             <br/>
-            <input ref="title" type="text" placeholder={currentUser.title}/>
+            <input ref="title" type="text" defaultValue={currentUser.title}/>
             <br/>
-            <input ref="email" type="text" placeholder={currentUser.email}/>
+            <input ref="email" type="text" defaultValue={currentUser.email}/>
             <br/>
-            <input ref="password" type="password" placeholder="{currentUser.password}"/>
+
 
             <fieldset>
                 <legend>Choose your interests</legend>
@@ -162,10 +161,10 @@ class AccountSettings extends React.Component {
                   </div>
 
                 </fieldset>
-                <button>Update Account</button>
+                <button className="button button-outline">Update Account</button>
                 </form>
                 <div id="deleteLink">
-                <button onClick={this.handleDeleteClick.bind(this)}>Delete Account</button>
+                <button className="button button-outline" onClick={this.handleDeleteClick.bind(this)}>Delete Account</button>
                 </div>
               </div>
             )

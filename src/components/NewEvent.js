@@ -22,18 +22,23 @@ class NewEvent extends React.Component {
         this.setState({category: category})
       }
 
+
+
     handleFormSubmit(evt){
       evt.preventDefault()
       const formData = {
         title: this.refs.title.value,
         description: this.refs.description.value,
         location: this.refs.location.value,
-        category:this.state.category
+        category:this.state.category,
+        date: this.refs.date.value
       }
       console.log(formData)
       auth.newEvent(formData).then((data) => {
         if(data.success)
           this.setState({shouldRedirect: true})
+          document.getElementById('newEvent').style.display = "inline";
+
       })
     }
       render(){
@@ -41,14 +46,18 @@ class NewEvent extends React.Component {
         <Redirect to= '/'/> : (
           <div className="newEvent">
           <form onSubmit={this.handleFormSubmit.bind(this)}>
+            <legend>Event Information</legend>
+            <div id="upperForm">
             <input ref='title' type='text' placeholder='Event Title' />
-            <input ref='description' type='textField' placeholder='Description' />
+            <input ref='description' type='text' placeholder='Description' />
             <input ref='location' type='text' placeholder='City, State' />
+            <input ref='date' type='date'  />
+            </div>
             <fieldset>
             <legend>Choose Category</legend>
             <div className="container">
               <div className="row">
-                <div className="col-sm-6">
+                <div className="col-sm-3">
                   <div>
                     <input type="checkbox" value="vr" onChange={this.onChange.bind(this)}/>
                     <label htmlFor="vr">Virtual Reality</label>
@@ -87,7 +96,7 @@ class NewEvent extends React.Component {
                   </div>
                 </div>
 
-                <div className="col-sm-6">
+                <div className="col-sm-3">
                   <div>
                     <input type="checkbox" value="gameDev" onChange={this.onChange.bind(this)} />
                     <label htmlFor="gameDev">Game Development</label>

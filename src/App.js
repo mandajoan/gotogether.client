@@ -34,12 +34,11 @@ render() {
   return (
     <Router>
       <div className="App">
-        {currentUser
-          ? <p>Current User: {currentUser.name}</p>
-          : null
-        }
+        
+        <div>
+          <NavBar currentUser={currentUser} />
+        </div>
 
-        <NavBar currentUser={currentUser} />
         <Route exact path='/' render={() => (
             <Home currentUser={currentUser} />
           )} />
@@ -56,7 +55,7 @@ render() {
             ? <AccountSettings onDeleteUser={this.logOut.bind(this)} onUpdateUser={this.setCurrentUser.bind(this)} currentUser={currentUser} />
             : <Redirect to='/login' />
           )} />
-      
+
 
 
       </div>

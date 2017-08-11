@@ -151,7 +151,7 @@ class SignUp extends React.Component {
                     </div>
 
                   </fieldset>
-                  <button>Create Account</button>
+                  <button className="button button-outline">Create Account</button>
                 </form>
               </div>
             )

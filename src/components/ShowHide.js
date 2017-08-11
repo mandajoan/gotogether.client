@@ -15,16 +15,19 @@ class ShowHide extends React.Component {
   onClick(){
       if(this.state.currentUser !== null){
         this.setState({childVisible: !this.state.childVisible})
+        document.getElementById('newEvent').style.display = "none";
+      
       }
 
     }
 
   render(){
+
     return(
       <div>
 
           <div onClick={() => this.onClick()}>
-            <input type='submit' value='New Event' />
+            <input id="newEvent" type='submit' value='New Event' />
           </div>
             {
               this.props.currentUser && this.state.childVisible ?
