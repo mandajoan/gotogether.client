@@ -4,7 +4,8 @@ import jwtDecode from 'jwt-decode'
 class AuthClient {
   constructor() {
     this.request = axios.create({
-      baseURL: 'https://gotogether-server.herokuapp.com/',
+      baseURL: 'https://gotogether-server.herokuapp.com',
+      // baseURL: 'http://localhost:3001',
       headers: {
         common: {
           token: this.getToken()
@@ -13,11 +14,12 @@ class AuthClient {
     })
   }
 
-  getEvents() {
+
+  getEvents(){
     return this.request({url: '/events'})
       .then(response => response.data)
   }
-//route to show specific event in div
+  //route to show specific event in div
   getEvent(ev){
     return this.request({method: 'GET', url:'/events/:id', data: ev})
     .then(response => response.data)
@@ -25,8 +27,11 @@ class AuthClient {
 
   newEvent(eventInfo){
     return this.request({method: 'POST', url: '/events', data: eventInfo})
-      .then((response) => response.data)
-  }
+      .then((response) => {
+        console.log(response.data)
+        return response.data
+      })
+    }
 
   signUp(userInfo) {
     return this.request({method: 'POST', url: '/users', data: userInfo})
@@ -35,6 +40,17 @@ class AuthClient {
         return response.data.success
       })
   }
+
+  updateUser(updatedInfo){
+    return this.request({method: 'PATCH', url:`/users/${this.getCurrentUser()._id}`, data: updatedInfo})
+      .then((response) => {
+        console.log(response)
+        this.setToken(response.data.token)
+        return response.data.success
+      })
+  }
+
+  // run clear token method after running request to delete
 
   logIn(credentials) {
     return this.request({method: 'POST', url: '/authenticate', data: credentials})
@@ -52,6 +68,11 @@ class AuthClient {
   getCurrentUser() {
     const token = this.getToken()
     return token ? jwtDecode(token) : null
+  }
+
+  deleteUser(){
+    return this.request({method: 'Delete', url:`/users/${this.getCurrentUser()._id}`})
+
   }
 
   getToken() {
