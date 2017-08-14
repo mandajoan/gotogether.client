@@ -1,4 +1,4 @@
-![Logo](go-together/public/logo.png)
+ ![Logo](go-together/public/logo.png)
 
  ### *Go Together* is a web application developed with the intent to help break the ice for tech professionals attending industry events.
 
@@ -42,8 +42,8 @@
 ![ERD Diagram](/Users/dearman/Desktop/project_4/go-together/public/erd.png)
 
 <hr>
-## UX Design
-### Go Together was designed to embrace the React Single Page App(SPA) features.
+##  UX Design
+###  Go Together was designed to embrace the React Single Page App(SPA) features.
 
 #### The goal was to keep as much on one page as possible.
 
